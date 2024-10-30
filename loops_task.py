@@ -24,8 +24,9 @@ print(f"Average: {average}")
 
 # Put in a list the first 10 odd numbers between 10 to 50.
 
-odd=[]
+
 numbers = range(10,51)
+odd=[]
 for i in numbers:
     if i%2!=0:
         odd.append(i)
