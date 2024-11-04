@@ -10,8 +10,6 @@ num = int(input("Enter a number: "))
 
 count=0
 for i in range(1,num+1):
-    value=("*"*i)
-    count=count+1
-    if count==num:
-        value=value+("."*i)
-    print(value)
+    print("*"*i)
+    
+

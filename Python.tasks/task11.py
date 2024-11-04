@@ -23,8 +23,7 @@ else:
         y=y-1
         m=m+12
 
-
-    print(f"You are {y} years {m} months {d} days old")
+print(f"You are {y} years {m} months {d} days old")
 
 
 
