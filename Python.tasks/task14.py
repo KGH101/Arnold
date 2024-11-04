@@ -3,8 +3,8 @@
     
 while True:
  try:
-      input=float(input("Enter the first number: "))
-      input=float(input("Enter the second number: "))
+      input1=float(input("Enter the first number: "))
+      input2=float(input("Enter the second number: "))
       result = input1 + input2
       print(result)
       break
