@@ -34,15 +34,15 @@ print(f"The average is: {avg}")
 
 def get_grade(average):
      
-     if average> 79:
+    if average> 79:
         return 'A'
-     elif average >= 60:
+    elif average >= 60:
         return 'B'
-     elif average>= 50:
+    elif average>= 50:
         return 'C'
-     elif average>= 40:
-        return 'D'
-     else:
+    elif average>= 40:
+         return 'D'
+    else:
         return 'E'
      
 grade = get_grade(avg)

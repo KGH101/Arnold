@@ -12,9 +12,10 @@ def calc_gross_salary(basic_salary, benefits):
 
 basic_salary = float(input("Enter Basic Salary: "))
 benefits = float(input("Enter Benefits: "))
-answer= calc_gross_salary(basic_salary,benefits)
-print(f"The gross salary is: {answer}")
+gross_salary= calc_gross_salary(basic_salary,benefits)
+print(f"The gross salary is: {gross_salary}")
 
+# Use the gross salary to find the NHIF
 
 def get_nhif(gross_salary):
 
@@ -32,174 +33,105 @@ def get_nhif(gross_salary):
         nhifContribution = 600
     elif gross_salary <= 24999:
         nhifContribution = 750
-    elif gross_salary <= 29999) {
-        nhifContribution = 850;
-    } else if (gross_salary <= 34999) {
-        nhifContribution = 900;
-    } else if (gross_salary <= 39999) {
-        nhifContribution = 950;
-    } else if (gross_salary <= 44999) {
-        nhifContribution = 1000;
-    } else if (gross_salary <= 49999) {
-        nhifContribution = 1100;
-    } else if (gross_salary <= 59999) {
-        nhifContribution = 1200;
-    } else if (gross_salary <= 69999) {
-        nhifContribution = 1300;
-    } else if (gross_salary <= 79999) {
-        nhifContribution = 1400;
-    } else if (gross_salary <= 89999) {
-        nhifContribution = 1500;
-    } else if (gross_salary <= 99999) {
-        nhifContribution = 1600;
-    } else {
-        nhifContribution = 1700;
-    }
+    elif gross_salary <= 29999:
+        nhifContribution = 850
+    elif gross_salary <= 34999:
+        nhifContribution = 900
+    elif gross_salary <= 39999:
+        nhifContribution = 950
+    elif gross_salary <= 44999:
+        nhifContribution = 1000
+    elif gross_salary <= 49999:
+        nhifContribution = 1100
+    elif gross_salary <= 59999:
+        nhifContribution = 1200
+    elif gross_salary <= 69999:
+        nhifContribution = 1300
+    elif gross_salary <= 79999:
+        nhifContribution = 1400
+    elif gross_salary <= 89999:
+        nhifContribution = 1500
+    elif gross_salary <= 99999:
+        nhifContribution = 1600
+    else:
+        nhifContribution = 1700
     
-    return nhifContribution;
+    return nhifContribution
 
-}
+nhif = get_nhif(gross_salary)
+print(f"NHIF CONTRIBUTION: {nhif}" )
 
-let nhif = get_nhif(gross_salary)
-console.log("NHIF CONTRIBUTION: " +nhif);
+## Continue with the program above, then use  the gross salary to find the NSSF. 
+##  To find the Kenya NSSF Rate  using 6% of the Gross Salary. BUT ONLY A MINIMUM OF 18,000 Gross Salary CAN BE USED IN NSSF. 
 
-// Continue with the program above, then use  the gross salary to find the NSSF. 
-//  To find the Kenya NSSF Rate  using 6% of the Gross Salary. BUT ONLY A MINIMUM OF 18,000 Gross Salary CAN BE USED IN NSSF. 
 
-// function get_nssf(gross_salary){
+def get_nssf(a):
 
-//      let min_salary = 18000;
-    
-//      let applicable_salary = Math.min(gross_salary, min_salary);
-     
-//      let nssf_contribution = applicable_salary * 0.06;
-     
-//      return nssf_contribution;
-// }
-// let nssf= get_nssf(gross_salary)
-// console.log("NSSF CONTRIBUTION: " +nssf)
+    nssf_contribution=0
 
-function get_nssf(a){
-    let nssf_contribution=0
-    if (a>=0 && a<=18000){
+    if a>=0 and a<=18000:
         nssf_contribution= a*0.06
-    }else{
+    else:
         nssf_contribution=18000*0.06
-    }
+    
     return nssf_contribution
 
-}
-
-let nssf= get_nssf(gross_salary)
-console.log("NSSF CONTRIBUTION: " +nssf)
+nssf= get_nssf(gross_salary)
+print(f"NSSF CONTRIBUTION: {nssf}")
 
 
-// Continue with the same program and calculate an individual’s NHDF using:
-//  i.e NHDF = gross_salary *  0.015
+## Continue with the same program and calculate an individual’s NHDF using:
+## i.e NHDF = gross_salary *  0.015
 
-function get_nhdf(gross_salary){
+def get_nhdf(a):
+    nhdf_contribution = a * 0.015
 
-    let nhdf_contribution = gross_salary * 0.015;
+    return nhdf_contribution
 
-    return nhdf_contribution;
-
-}
-let nhdf= get_nhdf(gross_salary)
-console.log("NHDF: " +nhdf)
+nhdf= get_nhdf(gross_salary)
+print(f"NHDF: {nhdf}")
 
 
 
-// Calculate the taxable income.
-// i.e taxable_income = gross salary - (NSSF + NHDF + NHIF) 
+## Calculate the taxable income.
+## i.e taxable_income = gross salary - (NSSF + NHDF + NHIF) 
 
-function get_taxable_income(gross_salary,nssf,nhdf,nhif){
-    let taxable_income = gross_salary - (nssf,nhdf,nhif)
+def get_taxable_income(gross_salary, nssf, nhdf, nhif):
+    taxable_income = gross_salary - (nssf+nhdf+nhif)
 
-    return taxable_income;
-}
+    return taxable_income
 
-let taxable_income = get_taxable_income(gross_salary, nssf, nhif, nhdf)
-console.log("Taxable Income: " +taxable_income)
-
-// Continue with the same program and find the person's PAYEE using the taxable income above.
-// Find the Kenya PAYEE Tax Rate using THIS LINK
-// Less Relief 
-
-// First Ksh 24,000: Taxed at 10%
-// Next Ksh 8,333: Taxed at 25%
-// Income exceeding Ksh 32,333 up to Ksh 800,000: Taxed at 30%
-// Income above Ksh 800,000: Taxed at 35%
-
-// function get_payee(taxable_income){
-//    let first_limit = 24000
-//    let second_limit = 32333
-//    let first_rate = 0.1
-//    let second_rate = 0.25
-//    let third_rate = 0.30
+taxable_income = get_taxable_income(gross_salary, nssf, nhif, nhdf)
+print(f"Taxable Income: {taxable_income}")
 
 
-//    if (taxable_income <= first_limit){
-//         payee = taxable_income * first_rate
 
-//    }
-        
-//     else if (taxable_income <= second_limit){
-//         payee = (first_limit * first_rate) + ((taxable_income - first_limit) * second_rate)
-//     }
-        
-//     else{
-//         payee= (first_limit * first_rate) + ((second_limit - first_limit) * second_rate) + ((taxable_income - second_limit) * third_rate)
+## Continue with the same program and find the person's PAYEE using the taxable income above.
+## Find the Kenya PAYEE Tax Rate using THIS LINK
+## Less Relief 
 
-//     }
-        
+## First Ksh 24,000: Taxed at 10%
+## Next Ksh 8,333: Taxed at 25%
+## Income exceeding Ksh 32,333 up to Ksh 800,000: Taxed at 30%
+## Income above Ksh 800,000: Taxed at 35%
 
-//     return payee
-
-// }
-
-// payee = get_payee(taxable_income)
-// console.log("PAYEE: " +payee)
-
-function get_payee(tax,relief){
-    let payee=0
-    if (tax>=0 && tax<=24000){
+def get_payee(taxable_income, relief):
+    payee=0
+    if taxable_income>=0 and taxable_income<=24000:
         payee=0
-    }else if (tax>24000 && tax<=32333){
-        payee=(24000*0.1)+((tax-24000)*0.25)
-    }
-    else if (tax>32333 && tax<=500000){
-        payee=(24000*0.1)+(8333*0.25)+((tax-32333)*0.30) - relief
-    }
-    else if (tax>500000 && tax<=800000){
-        payee=(24000*0.1)+ (8333*0.25) +(467667*0.30)+((tax-500000*0.325)) - relief
+    elif taxable_income>24000 and taxable_income<=32333:
+        payee=(24000*0.1)+((taxable_income-24000)*0.25)
     
-    }
-    else{
-        (tax>800000 && tax<=1600000)
-        payee=(24000*0.1)+ (8333*0.25) +(467667*0.30)  +(300000*0.325)+((tax-800000*0.35))- relief
-    }
-     
-}
+    elif taxable_income>32333 and taxable_income<=500000:
+        payee=(24000*0.1)+(8333*0.25)+((taxable_income-32333)*0.30) - relief
+    
+    elif taxable_income>500000 and taxable_income<=800000:
+        payee=(24000*0.1)+ (8333*0.25) +(467667*0.30)+((taxable_income-500000*0.325)) - relief
+    
+    else:
+        taxable_income>800000 and taxable_income<=1600000
+        payee=(24000*0.1)+ (8333*0.25) +(467667*0.30)  +(300000*0.325)+((taxable_income-800000*0.35))- relief
+    
 
-let payee= get_payee(taxable_income)
-console.log("PAYEE: " +payee)
-
-
-
-
-
-// Continue with the same program and calculate an individual’s Net Salary using:
-//  net_salary = gross_salary - (nhif + nhdf +  nssf + payee)
-
-function Net_Salary(gross_salary,nhif,nhdf,nssf){
-
-    net_salary= gross_salary - (nhif + nhdf +  nssf + payee)
-    return net_salary
-
-
-}
-
-net_salary= Net_Salary(gross_salary,nhif,nhdf,nssf)
-console.log("NET SALARY: " + net_salary)
-
-
+payee= get_payee(taxable_income)
+print(f"PAYEE: {payee}")
