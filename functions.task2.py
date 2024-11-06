@@ -1,13 +1,10 @@
 # Write a python program that takes from a user 5 inputs (maths, eng, swa,
 # sci, sos).
-
 # Create a function that calculates the total marks another the average
-
 # marks ,then a functions that finds the grade according to the table below.
+#Use the value from total to get the average and average to find the grade.
+#A > 79 , B - 60 to 79, C - 59 to 49, D - 40 to 49, E - less 40
 
-# Use the value from total to get the average and average to find the grade.
-
-# A > 79 , B - 60 to 79, C - 59 to 49, D - 40 to 49, E - less 40
 
 def calculate_total(a, b, c, d, e):
     total_marks= (a+b+c+d+e)
@@ -23,16 +20,16 @@ sos = float(input("Enter marks for Social Studies: "))
 
 
 total_marks= calculate_total(maths,eng,swa,sci,sos)
-print(total_marks)
+print(f"The totak marks is: {total_marks}")
 
 
    
-def get_average(sum) :
-    average = sum/5
+def get_average(total_marks) :
+    average = total_marks/5
     return average
 
-average= get_average(total_marks)
-print(average)
+avg= get_average(total_marks)
+print(f"The average is: {avg}")
 
 
 def get_grade(average):
@@ -48,7 +45,7 @@ def get_grade(average):
      else:
         return 'E'
      
-marks= int(input("Enter Marks: "))   
-grade = get_grade(average)
-print(grade)
+grade = get_grade(avg)
+print(f"The grade is: {grade}")
    
+
