@@ -1,0 +1,10 @@
+1.Create a class Animal with attributes species and sound.Add a method make_sound that prints: "The [species] goes [sound]!",Instantiate objects for different animals and call make_sound.
+
+2.Create a class Book with attributes like title, author, and year.
+Add a method that returns a description of the book.
+Create an object of Book and print out the description.
+
+3.Define a class BankAccount with attributes owner and balance (set balance to 0 by default).Add methods deposit and withdraw to modify the balance and a method get_balance to display the balance.
+Ensure that the withdraw method does not allow the balance to go negative.
+
+
