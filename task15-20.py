@@ -132,6 +132,21 @@ def get_payee(taxable_income, relief):
         taxable_income>800000 and taxable_income<=1600000
         payee=(24000*0.1)+ (8333*0.25) +(467667*0.30)  +(300000*0.325)+((taxable_income-800000*0.35))- relief
     
-
-payee= get_payee(taxable_income)
+    return max(payee, 0)  # Ensure PAYEE is not negative
+relief= 2400
+payee= get_payee(taxable_income,relief)
 print(f"PAYEE: {payee}")
+
+
+## Continue with the same program and calculate an individual’s Net Salary using:
+## net_salary = gross_salary - (nhif + nhdf +  nssf + payee)
+
+def Net_Salary(gross_salary,nhif,nhdf,nssf):
+
+    net_salary= gross_salary - (nhif + nhdf +  nssf + payee)
+    return net_salary
+
+net_salary= Net_Salary(gross_salary,nhif,nhdf,nssf)
+print(f"NET SALARY: {net_salary}")
+
+
