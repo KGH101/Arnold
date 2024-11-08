@@ -43,36 +43,52 @@ class BankAccount:
         self.owner = owner
         self.balance = balance
 
-    def deposit(self, amount):
+    def deposit(self,amount):
         if amount > 0:
-            self.balance += amount
-            print(f"Deposited {amount}. New balance is {self.balance}.")
+            self.balance+=amount   
+            return f"{amount} deposited, your New Balance is {self.balance}"
         else:
-            print("Deposit amount must be positive.")
+            return "Invalid, Deposit amount cannot be less than zero"
 
-    def withdraw(self, amount):
+    def withdraw(self,amount)  :
         if amount > self.balance:
-            print("Insufficient balance for this withdrawal.")
-        elif amount > 0:
-            self.balance -= amount
-            print(f"Withdrew {amount}. New balance is {self.balance}.")
+            return f"insufficient balance to withdraw{amount}"
+        
         else:
-            print("Withdrawal amount must be positive.")
+            self.balance-=amount
+            return f"{amount} withdrawed and the new balance is {self.balance}"
+        
 
     def get_balance(self):
-        return f"Current balance is {self.balance}"
+        return f"Hello {self.owner} Current balance is {self.balance}"
+    
+
+person1= BankAccount("Arnold")
+person1.deposit(1000)   
+person1.withdraw(5000)
+print(person1.get_balance())       
+
+# Define a class Rectangle with attributes width and height.
+# Add methods area and perimeter to calculate the area and perimeter of the rectangle.
+# Instantiate a few rectangle objects and print their area and perimeter.
+
+class Rectangle:
+    def __init__(self, width, height):
+        self.width= width
+        self.height= height
+
+    def area(self):
+        return self.width * self.height
+
+    def perimeter(self):
+        return (self.width + self.height) *2
+    
+rectangle1 = Rectangle(3, 11)
+rectangle2 = Rectangle(4, 19)
+rectangle3 = Rectangle(8, 14)
 
 
-account = BankAccount("Alice")
-
-# Depositing money
-account.deposit(100)
-
-# Withdrawing money
-account.withdraw(50)
-
-# Attempt to withdraw more than the balance
-account.withdraw(100)
-
-# Display the balance
-print(account.get_balance())
+print(f"Area of Rectangle 1 is: {rectangle1.area()}, Perimeter is: {rectangle1.perimeter()}")
+print(f"Area of Rectangle 2 is: {rectangle2.area()}, Perimeter is: {rectangle2.perimeter()}")
+print(f"Area of Rectangle 3 is: {rectangle3.area()}, Perimeter is: {rectangle3.perimeter()}")
+   
