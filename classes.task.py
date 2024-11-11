@@ -92,3 +92,4 @@ print(f"Area of Rectangle 1 is: {rectangle1.area()}, Perimeter is: {rectangle1.p
 print(f"Area of Rectangle 2 is: {rectangle2.area()}, Perimeter is: {rectangle2.perimeter()}")
 print(f"Area of Rectangle 3 is: {rectangle3.area()}, Perimeter is: {rectangle3.perimeter()}")
    
+Objects 
