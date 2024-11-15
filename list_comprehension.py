@@ -19,7 +19,7 @@ print(even_numbers)
 squares = [i ** 2 for i in range(1, 21)]
 print(squares)
 
-# or
+# or when using loops
 
 squares = []  # Initialize an empty list
 
@@ -27,3 +27,6 @@ for num in range(1, 21):  # Loop through numbers from 1 to 20
     squares.append(num ** 2)  # Append the square of each number to the list
 
 print(squares)
+
+numbers= [i for i in range(1,1001) if i%2==0]
+print(numbers)
